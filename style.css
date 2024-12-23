@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+#game {
+    margin-top: 50px;
+}
+
+#cookie-container {
+    display: inline-block;
+    margin: 20px;
+}
+
+#cookie {
+    width: 200px;
+    cursor: pointer;
+}
+
+#click-count {
+    font-size: 2em;
+    font-weight: bold;
+}
