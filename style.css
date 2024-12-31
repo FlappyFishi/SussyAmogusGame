@@ -1,7 +1,10 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
+    background-image: url('assets/images/kfc.jpg');
+    background-color: #ce133f;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #game {
@@ -16,9 +19,23 @@ body {
 #cookie {
     width: 200px;
     cursor: pointer;
+    border-radius: 100%;
+}
+#counter-container {
+    background-color: white;
+    margin-left: 45%;
+    margin-right: 45%;
+    border-radius: 0%;
 }
 
 #click-count {
     font-size: 2em;
     font-weight: bold;
+}
+
+.feedback-container {
+    background-color: white;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5%;
 }
