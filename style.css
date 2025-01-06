@@ -39,3 +39,19 @@ body {
     padding: 10px;
     border-radius: 5%;
 }
+
+#message {
+    padding: 5%;
+}
+
+#watermelon-container {
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    display: none;
+    z-index: 100000000000;
+    transition: top 5s linear;
+}
