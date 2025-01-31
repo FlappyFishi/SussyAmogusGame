@@ -2,15 +2,13 @@ let clickCount = 0;
 
 const watermelon = document.getElementById('watermelon');
 
-document.getElementById('cookie').addEventListener('click', () => {
-  clickCount++;
-  document.getElementById('click-count').innerText = clickCount;
-  playClickSound();
-});
-
 function playClickSound() {
   const clickSound = new Audio('assets/sounds/shortened monkey.mp3');
   clickSound.play();
+  cookie.classList.add('enlarge');
+  setTimeout(() => {
+    cookie.classList.remove('enlarge');
+  }, 100);
 }
 
 function playWatermelonClickSound() {
@@ -20,11 +18,11 @@ function playWatermelonClickSound() {
 
 function spawnWatermelon() {
   const screenWidth = window.innerWidth;
-  const randomLeft = Math.random() * (screenWidth - 60);
+  const randomLeft = Math.max(10, Math.random() * (screenWidth - 70));
 
   watermelon.style.top = '-100px';
   watermelon.style.left = `${randomLeft}px`;
-  watermelon.style.display = block;
+  watermelon.style.display = 'block';
 
   setTimeout(() => {
     watermelon.style.top = '100vh'; // Move to the bottom of the screen
@@ -32,7 +30,9 @@ function spawnWatermelon() {
 
   // Hide the golden cookie if it reaches the bottom
   setTimeout(() => {
-    watermelon.style.display = 'none';
+    if (parseInt(watermelon.style.top) >= window.innerHeight) {
+      watermelon.style.display = 'none';
+    }
   }, 5000); // Match the transition duration
 }
 
@@ -44,7 +44,14 @@ watermelon.addEventListener('click', () => {
 });
 
 setInterval(() => {
-  if (Math.random() < 0.9) {
+  if (Math.random() < 0.5) {
+    console.log('Spawning watermelon!');
     spawnWatermelon();
   }
-}, 5000);
+}, 10000);
+
+document.getElementById('cookie').addEventListener('click', () => {
+  clickCount++;
+  document.getElementById('click-count').innerText = clickCount;
+  playClickSound();
+});

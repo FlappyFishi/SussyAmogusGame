@@ -14,19 +14,29 @@ body {
 #cookie-container {
     display: inline-block;
     margin: 20px;
+    border-color: aqua;
 }
 
 #cookie {
+    border: .2rem solid black;
     width: 200px;
     cursor: pointer;
     border-radius: 100%;
+    transition: all .01s ease-in-out;
 }
+
+#cookie.enlarge {
+    transform: scale(1.2);
+}
+
 #counter-container {
     background-color: white;
-    margin-left: 45%;
-    margin-right: 45%;
-    border-radius: 0%;
+    width: 150px;  /* Define a width */
+    margin: 15px auto;  /* Auto centers horizontally */
+    border-radius: 5px;
+    padding: 1px;
 }
+
 
 #click-count {
     font-size: 2em;
@@ -44,7 +54,7 @@ body {
     padding: 5%;
 }
 
-#watermelon-container {
+#watermelon {
     cursor: pointer;
     width: 60px;
     height: 60px;
