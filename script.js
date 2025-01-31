@@ -25,12 +25,13 @@ function spawnWatermelon() {
   watermelon.style.display = 'block';
 
   setTimeout(() => {
-    watermelon.style.top = '100vh'; // Move to the bottom of the screen
+    watermelon.style.top = `${window.innerHeight}px`; // Move to the bottom of the screen
   }, 50);
 
   // Hide the golden cookie if it reaches the bottom
   setTimeout(() => {
     if (parseInt(watermelon.style.top) >= window.innerHeight) {
+      console.log('Watermelon went off-screen, hiding...');
       watermelon.style.display = 'none';
     }
   }, 5000); // Match the transition duration

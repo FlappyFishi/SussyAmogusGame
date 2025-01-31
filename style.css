@@ -5,6 +5,7 @@ body {
     background-color: #ce133f;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
 #game {
